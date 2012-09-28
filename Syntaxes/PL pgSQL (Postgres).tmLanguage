@@ -115,7 +115,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>[!&lt;&gt;:]?=|&lt;&gt;|&lt;|&gt;|\+|(?&lt;!\.)\*|-|(?&lt;!^)/|\|\|</string>
+			<string>[!&lt;&gt;:]?=|&lt;&gt;|&lt;|&gt;|\+|(?&lt;!\.)\*|-|(?&lt;!^)/|@@|\|\|</string>
 			<key>name</key>
 			<string>keyword.operator.postgres</string>
 		</dict>
@@ -133,7 +133,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(if|elsif|else|end\s+if|loop|end\s+loop|for|case|end\s+case|continue|return|goto)\b</string>
+			<string>(?i)\b(if|elsif|else|end\s+if|loop|end\s+loop|for|foreach|array|case|end\s+case|continue|return|goto)\b</string>
 			<key>name</key>
 			<string>keyword.control.postgres</string>
 		</dict>
@@ -151,7 +151,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(avg|count|sum|max|min|nvl|trim|to_date|to_char|lpad|ltrim|rpad|rtrim|trunc|to_number)\b</string>
+			<string>(?i)\b(avg|count|sum|max|min|nvl|trim|to_date|to_char|lpad|ltrim|rpad|rtrim|trunc|to_number|regexp_split_to_array|regexp_replace)\b</string>
 			<key>name</key>
 			<string>support.function.builtin.postgres</string>
 		</dict>
@@ -175,13 +175,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(immutable|volatile|stable|serial|primary|key|references|comment|column|schema|authorization|get|diagnostics|returning|drop|all|raise|notice|external|security|definer|language|grant|execute|on|to|function|procedure|returns|end|then|deterministic|exception|when|others|subtype|constant|range|binary_integer|declare|begin|in|out|is|as|exit|open|fetch|into|close|type|rowtype|default|\.(extend|count|first|last|next|nextval|currval))\b</string>
+			<string>(?i)\b(immutable|volatile|stable|serial|primary|key|references|comment|column|schema|authorization|get|diagnostics|returning|drop|all|raise|notice|warning|exception|external|security|definer|language|grant|execute|on|to|function|procedure|returns|end|then|deterministic|exception|when|others|subtype|constant|range|binary_integer|declare|begin|in|out|is|as|exit|open|fetch|into|close|type|rowtype|default|\.(extend|count|first|last|next|nextval|currval)|cost|alter|owner)\b</string>
 			<key>name</key>
 			<string>keyword.other.postgres</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(select|from|where|order\s+by|group\s+by|asc|desc|update|set|insert|into|values|delete|from|distinct|union|having|limit|table|of)\b</string>
+			<string>(?i)\b(select|perform|from|where|order\s+by|group\s+by|asc|desc|update|set|insert|into|values|delete|from|distinct|union|having|limit|table|of|prepare|(inner|left|outer) join)\b</string>
 			<key>name</key>
 			<string>keyword.other.sql.postgres</string>
 		</dict>
@@ -215,7 +215,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)\b(number|integer|varchar2|varchar|boolean|date|setof|record|query|numeric|([-a-z0-9_.]+%(row)?type))\b</string>
+			<string>(?i)\b(number|integer|bigint|varchar2|varchar|boolean|date|setof|record|query|numeric|void|character varying|text|([-a-z0-9_.]+%(row)?type))\b</string>
 			<key>name</key>
 			<string>storage.type.postgres</string>
 		</dict>
